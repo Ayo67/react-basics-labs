@@ -33,23 +33,11 @@ function App() {
   } 
 
   const formChangeHandler = (event) => {
-    let form = {...formState};
-
-    switch(event.target.name) {
-      case "title":
-          form.title = event.target.value;
-          break;
-      case "description":
-          form.description = event.target.value;
-          break;
-      case "deadline":
-          form.deadline = event.target.value;
-          break;
-      default:
-          form = formState;
-    }
+    let form = { ...formState };
+    form[event.target.name] = event.target.value;
     setFormState(form);
-  }
+  };
+  
   console.log(formState)
 
   const formSubmitHandler = (event) => {
