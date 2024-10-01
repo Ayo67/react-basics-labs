@@ -98,3 +98,21 @@ form {
   width: 50%;
   margin: auto;
 }
+
+/* Low priority: Greenish color */
+.card.low {
+  background-color: #5bb4c4;
+  border: 2px solid #2b8a87; /* Darker teal */
+}
+
+/* Medium priority: Yellow/orange */
+.card.medium {
+  background-color: #ffa94d;
+  border: 2px solid #ff8800; /* Darker orange */
+}
+
+/* High priority: Red */
+.card.high {
+  background-color: #ff6b6b;
+  border: 2px solid #d9534f; /* Darker red */
+}

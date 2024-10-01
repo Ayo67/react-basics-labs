@@ -7,23 +7,23 @@ import { v4 as uuidv4} from 'uuid';
 function App() {
   const [ taskState, setTaskState ] = useState({
     tasks: [
-      { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today", done: false },
-      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", done: false },
-      { id: 3, title: "Tidy up", deadline: "Today", done: false}
+      { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today", done: false, priority: "Low" },
+      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", done: false,priority: "Medium" },
+      { id: 3, title: "Tidy up", deadline: "Today", done: false,priority: "High"}
     ]
   });
 
   const [ formState, setFormState ] = useState({
     title: "",
     description: "",
-    deadline: ""
+    deadline: "",
+    priority:"low"
   });
 
   const doneHandler = (taskIndex) => {
     const tasks = [...taskState.tasks];
     tasks[taskIndex].done = !tasks[taskIndex].done;
     setTaskState({tasks});
-    console.log(`${taskIndex} ${tasks[taskIndex].done}`);
   }
 
   const deleteHandler = (taskIndex) => {
@@ -72,6 +72,7 @@ function App() {
           title={task.title}
           description={task.description}
           deadline={task.deadline}
+          priority={task.priority}
           key={task.id}
           done={task.done}
           markDone={() => doneHandler(index)}
